@@ -47,7 +47,6 @@ public class SqlEditorTest {
     public void checkCountOfRows() {
         sqlEditorPage.typeSqlStatement("window.editor.setValue(\"SELECT * FROM Customers WHERE City='London';\")");
         sqlEditorPage.runSql();
-        System.out.println(sqlEditorPage.getNumberOfRecords());
         Assert.assertEquals("6", sqlEditorPage.getNumberOfRecords());
     }
     @Test
@@ -69,7 +68,7 @@ public class SqlEditorTest {
         sqlEditorPage.runSql();
         String myValues[] = {"Roma", "Ts", "Usova", "Tomsk", "634034", "RU"};
         List<WebElement> e = driver.findElements(By.xpath("//td[text()='1']/../td"));
-        for(int i = 1; i <= myValues.length; i++ ) {
+        for(int i = 1; i <= myValues.length; i++) {
             Assert.assertEquals(myValues[i-1], e.get(i).getText());
         }
     }

@@ -3,8 +3,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 public class SqlEditorPage {
 
     private WebDriver driver;
@@ -18,8 +16,6 @@ public class SqlEditorPage {
     private WebElement runSqlBtn;
     @FindBy(xpath = "//div[@id='resultSQL']//div[contains(text(), 'Number of Records')]")
     private WebElement numberOfRecords;
-    @FindBy(xpath = "//td[text()='1']/../td")
-    private List<WebElement> firstRow;
 
     public SqlEditorPage runSql() {
         runSqlBtn.click();
